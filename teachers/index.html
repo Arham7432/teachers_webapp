@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Ather Ali Official | Making Studies simply accessible</title>
+    <link rel="shortcut icon" href="https://www.iit.edu/themes/iit/assets/favicons/favicon.ico?v=2" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .brand-title img {
+            width: 5vw;
+            color: white;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .navbar-links ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar-links li {
+            margin-left: 20px;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #222;
+            font-size: 1.3vw;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: lightseagreen;
+        }
+
+        .navbar-links a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: lightseagreen;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-links a:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        .toggle-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+        }
+
+        .toggle-button .bar {
+            height: 3px;
+            width: 100%;
+            background-color: black;
+            border-radius: 10px;
+        }
+
+        .nav-part2 {
+            display: flex;
+            gap: 26px;
+            cursor: pointer;
+        }
+
+        #main {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        .content {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin: 90px 0;
+        }
+
+        .left {
+            /* border: 2px solid grey; */
+            width: 49%;
+            /* height: 115vh; */
+            margin: 7px 54px;
+            line-height: 65px;
+        }
+
+        .left h1 {
+            font-weight: 900;
+            font-size: 4vw;
+            color: #222;
+        }
+
+        .left h1 span {
+            color: lightseagreen;
+            font-weight: 900;
+        }
+
+        .left p {
+            color: #717171;
+            font-weight: 600;
+            line-height: 20px;
+            margin-top: 13px;
+            font-size: 19px;
+        }
+
+        .right {
+            /* border: 2px solid grey; */
+            width: 40%;
+            height: 115vh;
+        }
+
+        .right img {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .navbar-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding: 20px 0;
+                transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.3);
+            }
+
+            .navbar-links ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-links ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .navbar-links a {
+                padding: 10px 20px;
+                color: #222;
+                text-transform: uppercase;
+                font-size: 4.1vw;
+            }
+
+            .navbar-links a:hover {
+                color: lightseagreen;
+                border-radius: 5px;
+            }
+
+            .toggle-button {
+                display: flex;
+                width: 25px;
+                height: 15px;
+            }
+
+            .navbar-links.open {
+                display: flex;
+                max-height: 500px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 16px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                opacity: 1;
+            }
+
+            .brand-title img {
+                margin: -7px;
+                width: 14vw;
+                color: white;
+            }
+
+            .content {
+                flex-direction: column;
+            }
+
+            .left {
+                width: 100%;
+                margin: -22px 17px;
+            }
+
+            .left h1 {
+                font-size: 9vw;
+            }
+
+            .left p {
+                font-size: 19px;
+                line-height: 29px;
+            }
+
+            .right {
+                width: 100%;
+            }
+
+            .right img {
+                margin: 30px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <nav class="navbar">
+            <div class="brand-title"><img src="assets/logo.png"></div>
+            <a href="javascript:void(0);" class="toggle-button" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links" id="navbar-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="left">
+                <h1>Learn from the best educational platform of <span>Pakistan.</span></h1>
+                <p>Syed Ather Ali Official</p>
+
+            </div>
+            <div class="right">
+                <img
+                    src="https://cdni.iconscout.com/illustration/premium/thumb/new-education-idea-5513403-4602439.png?f=webp">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var navbarLinks = document.getElementById("navbar-links");
+            if (navbarLinks.classList.contains("open")) {
+                navbarLinks.classList.remove("open");
+            } else {
+                navbarLinks.classList.add("open");
+            }
+        }
+    </script>
+</body>
+
+</html>
