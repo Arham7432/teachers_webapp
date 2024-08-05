@@ -4,241 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Ather Ali Official | Making Studies simply accessible</title>
+    <title>Syed Ather Ali Official | Making Education simply accessible</title>
     <link rel="shortcut icon" href="https://www.iit.edu/themes/iit/assets/favicons/favicon.ico?v=2" type="image/x-icon">
     <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: "Poppins", sans-serif;
-            font-weight: 500;
-            font-style: normal;
+        .logo img {
+            width: 74px;
+            background-color: ghostwhite;
+            border-radius: 89px;
+            padding: b;
+            padding: 0px 0px;
+            border: 2px solid #22136b;
         }
 
-        .navbar {
+        footer {
+            /* background-color: #0f0f0f; */
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 70px;
+            border-top: 1px solid #34373c;
+        }
+
+        .footer-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .brand-title img {
-            width: 5vw;
-            color: white;
+        .footer-section {
+            flex: 1;
+            padding: 20px;
+            min-width: 250px;
         }
 
-        .navbar-links {
-            display: flex;
-            align-items: center;
-            background-color: transparent;
+        .footer-section h2 {
+            margin-bottom: 10px;
+            font-weight: 100;
         }
 
-        .navbar-links ul {
-            display: flex;
+        .footer-section p,
+        .footer-section ul,
+        .footer-section li {
             list-style: none;
+            color: rgb(178 183 183);
+            font-size: 13px;
+            margin-top: 17px;
+            padding: 0;
         }
 
-        .navbar-links li {
-            margin-left: 20px;
+        .footer-section ul {
+            margin-top: 10px;
         }
 
-        .navbar-links a {
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: rgb(178 183 183);
             text-decoration: none;
-            color: #222;
-            font-size: 1.3vw;
-            position: relative;
-            transition: color 0.3s;
         }
 
-        .navbar-links a:hover {
-            color: lightseagreen;
+        .footer-section ul li a:hover {
+            text-decoration: underline;
         }
 
-        .navbar-links a::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background-color: lightseagreen;
-            visibility: hidden;
-            transform: scaleX(0);
-            transition: all 0.3s ease-in-out;
+        .terms {
+            margin-top: 20px;
         }
 
-        .navbar-links a:hover::before {
-            visibility: visible;
-            transform: scaleX(1);
-        }
-
-        .toggle-button {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
+        .social-icons a img,
+        .app-links a img {
             width: 30px;
-            height: 21px;
+            margin-right: 10px;
         }
 
-        .toggle-button .bar {
-            height: 3px;
-            width: 100%;
-            background-color: black;
-            border-radius: 10px;
+        .social-icons a img {
+            border-radius: 32px;
+            width: 51px;
+            padding: 9px 10px;
         }
 
-        .nav-part2 {
-            display: flex;
-            gap: 26px;
-            cursor: pointer;
+        .social-icons a img:hover {
+            background-color: #222;
+            transition: all 0.2s;
         }
 
-        #main {
-            height: 100%;
-            width: 100%;
-            position: relative;
-        }
-
-        .content {
-            width: 100%;
-            height: 80%;
+        .last-cont {
             display: flex;
             justify-content: space-between;
-            margin: 90px 0;
+            margin: 4px 12px;
         }
 
-        .left {
-            /* border: 2px solid grey; */
-            width: 49%;
-            /* height: 115vh; */
-            margin: 7px 54px;
-            line-height: 65px;
+        .last-cont h4 {
+            font-size: 12px;
+            font-weight: 100;
+            color: rgb(178 183 183);
         }
 
-        .left h1 {
-            font-weight: 900;
-            font-size: 4vw;
-            color: #222;
+        .app-links {
+            display: flex;
+            flex-direction: column;
+            margin-top: 25px;
         }
 
-        .left h1 span {
-            color: lightseagreen;
-            font-weight: 900;
-        }
-
-        .left p {
-            color: #717171;
-            font-weight: 600;
-            line-height: 20px;
-            margin-top: 13px;
-            font-size: 19px;
-        }
-
-        .right {
-            /* border: 2px solid grey; */
-            width: 40%;
-            height: 115vh;
-        }
-
-        .right img {
-            width: 100%;
-        }
-
-        @media (max-width: 600px) {
-            .navbar-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                padding: 20px 0;
-                transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-                max-height: 0;
-                opacity: 0;
-                overflow: hidden;
-                box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.3);
-            }
-
-            .navbar-links ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .navbar-links ul li {
-                text-align: center;
-                margin: 10px 0;
-            }
-
-            .navbar-links a {
-                padding: 10px 20px;
-                color: #222;
-                text-transform: uppercase;
-                font-size: 4.1vw;
-            }
-
-            .navbar-links a:hover {
-                color: lightseagreen;
-                border-radius: 5px;
-            }
-
-            .toggle-button {
-                display: flex;
-                width: 25px;
-                height: 15px;
-            }
-
-            .navbar-links.open {
-                display: flex;
-                max-height: 500px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 16px;
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                opacity: 1;
-            }
-
-            .brand-title img {
-                margin: -7px;
-                width: 14vw;
-                color: white;
-            }
-
-            .content {
-                flex-direction: column;
-                z-index: -1;
-            }
-
-            .left {
-                width: 100%;
-                margin: -22px 17px;
-            }
-
-            .left h1 {
-                font-size: 8vw;
-                line-height: 42px;
-                /* border: 2px solid blue; */
-                width: 96vw;
-            }
-
-            .left p {
-                font-size: 19px;
-                line-height: 29px;
-            }
-
-            .right {
-                width: 100%;
-            }
-
-            .right img {
-                margin: 30px 0;
-            }
+        .app-links a img {
+            width: 150px;
         }
     </style>
 </head>
@@ -246,7 +122,8 @@
 <body>
     <div id="main">
         <nav class="navbar">
-            <div class="brand-title"><img src="assets/logo.png"></div>
+            <div class="brand-title"><img src="assets/logo.png" alt="Logo">
+            </div>
             <a href="javascript:void(0);" class="toggle-button" onclick="toggleMenu()">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -255,8 +132,8 @@
             <div class="navbar-links" id="navbar-links">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </div>
@@ -264,27 +141,325 @@
 
         <div class="content">
             <div class="left">
-                <h1>Learn from the best educational platform of <span>Pakistan.</span></h1>
+                <h1>Learn from the best educational platform of <span>Karachi.</span></h1>
                 <p>Syed Ather Ali Official</p>
-
             </div>
             <div class="right">
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/education-7623675-6706859.png?f=webp"
+                    alt="Education Image">
+            </div>
+        </div>
+    </div>
+    <div class="separation"></div>
+    <div class="quote-para">
+        <p><span><img src="assets/start-comma.svg"></span> Education is the most powerful weapon you can use to change
+            the world. It
+            fosters critical thinking,
+            nurtures curiosity, and empowers individuals to break the chains of ignorance and build a better future.
+            <span><img src="assets/end-comma.svg"></span>
+        </p>
+        <div class="author-name">
+            -Nelson Mandela
+        </div>
+
+    </div>
+    <div class="separation"></div>
+
+
+    <section class="sec1">
+        <div class="heading">
+            <h2>Watch & Learn</h2>
+        </div>
+
+        <div class="card-cont">
+            <div class="card">
                 <img
-                    src="https://cdni.iconscout.com/illustration/premium/thumb/new-education-idea-5513403-4602439.png?f=webp">
+                    src="https://i.ytimg.com/vi/1l49DBPdyXk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDXis_coXbb60hEkd_3mAymo_aDmg">
+                <div class="text">
+                    "In this video, I have explained the concept of the <b>mole</b> in chemistry, focusing on its role
+                    in <b>stoichiometry</b> and <b>molecular mass calculations</b> using <b>Avogadro's number
+                    </b>."
+                </div>
+
+                <div class="watch-btn">
+                    <a href="https://youtu.be/1l49DBPdyXk?si=7L5EAw0ksJCjgg9I" target="_blank">Start Watching</a>
+                </div>
+            </div>
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/gDVLkpPqab0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLB4p-RNdZEhitVbHZGi11v8lkDX7Q">
+                <div class="text">
+                    "In this video, I have covered <b>element detection</b> techniques and the <b>marking scheme</b> for
+                    practicals, key <b>methods</b> and <b>criteria</b> for accurate <b>assessment</b> in
+                    <b>chemistry</b> labs."
+                </div>
+
+                <div class="watch-btn">
+                    <a href="https://youtu.be/gDVLkpPqab0?si=gCzJxpaL8mu0fmiA" target="_blank">Start Watching</a>
+                </div>
+            </div>
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/7aQfyPSW0Ps/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCwfSeY6g35KNbGnJgwyRxlBavIlw">
+                <div class="text">
+                    "In this video, I have shared essential <b>paper attempting tips</b>, focusing on <b>time
+                        management</b>, <b>structured answers</b>, and maximizing <b>scores</b> in <b>chemistry
+                        exams</b>."
+                </div>
+
+                <div class="watch-btn">
+                    <a href="https://youtu.be/7aQfyPSW0Ps?si=XYg20auUUZcV2tyP" target="_blank">Start Watching</a>
+                </div>
+            </div>
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/u0Z-neRmPRU/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBJrB5k8GvbmfXSJFIx8kZQOAzlyw">
+                <div class="text">
+                    "In this video, I have highlighted the most <b>important questions</b> for <b>Class 11 English</b>,
+                    focusing on <b>literature</b>, <b>grammar</b>, and <b>writing skills</b> for better <b>exam
+                        preparation</b>."
+                </div>
+
+                <div class="watch-btn">
+                    <a href="https://youtu.be/u0Z-neRmPRU?si=d1rm9DT8rnInV0Y7" target="_blank">Start Watching</a>
+                </div>
+            </div>
+            <!-- 💀🎶😳display none in mobile phones! -->
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/KuBDCDvBavg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBzDj-pJ1Niqre7qX8rh8bMGpGoZQ">
+                <div class="text">
+                    "In this video, I have explained <b>De Broglie's hypothesis</b> for <b>Class 9 students</b>,
+                    covering <b>wave-particle duality</b> and its <b>significance</b> in <b>quantum mechanics</b>."
+                </div>
+
+                <div class="watch-btn">
+                    <a href="https://youtu.be/KuBDCDvBavg?si=EWB6N1LcHzS-CQ22" target="_blank">Start Watching</a>
+                </div>
+            </div>
+            <div class="card">
+                <img
+                    src="https://i.ytimg.com/vi/bBduPcojj-s/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBK2SLO9sXZTS6YTg5W9idNTBAkpw">
+                <div class="text">
+                    "In this video, I have covered a <b>Class 12 Mathematics lecture</b> focusing on
+                    <b>key topics</b> and <b>important concepts</b> to enhance your <b>understanding</b> and
+                    <b>problem-solving skills</b>."
+                </div>
+
+                <div class="watch-btn">
+                    <a href="https://youtu.be/bBduPcojj-s?si=mHsFpBWQn8bPG6Bh" target="_blank">Start Watching</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-more">
+            <a href="https://www.youtube.com/@SyedAtherAliOfficial/videos" target="_blank">Explore More <span><img
+                        src="assets/yt.svg">
+                </span>
+            </a>
+        </div>
+    </section>
+    <div class="separation"></div>
+    <div class="sec2">
+        <div class="heading">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header top-rad">
+                What is the focus of the channel?
+                <img class="dropdown-icon" src="assets/drop.svg" alt="Dropdown icon">
+            </div>
+            <div class="accordion-content">
+                <p>The channel primarily focuses on educational content for classes 9, 10, 11, 12, ECAT, and MDCAT,
+                    providing lectures, tutorials, and study tips.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                Who is the target audience for the channel?
+                <img class="dropdown-icon" src="assets/drop.svg" alt="Dropdown icon">
+            </div>
+            <div class="accordion-content">
+                <p>The target audience includes students from classes 9 to 12, and those preparing for ECAT and MDCAT
+                    exams.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                How often is new content uploaded?
+                <img class="dropdown-icon" src="assets/drop.svg" alt="Dropdown icon">
+            </div>
+            <div class="accordion-content">
+                <p>New content is regularly uploaded, ensuring fresh and up-to-date educational material is always
+                    available.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                What subjects are covered on the channel?
+                <img class="dropdown-icon" src="assets/drop.svg" alt="Dropdown icon">
+            </div>
+            <div class="accordion-content">
+                <p>The channel covers subjects including Mathematics, Physics, Chemistry, Biology, and English for
+                    classes 9 to 12, ECAT, and MDCAT.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                Can viewers request specific topics?
+                <img class="dropdown-icon" src="assets/drop.svg" alt="Dropdown icon">
+            </div>
+            <div class="accordion-content">
+                <p>Yes, viewers can request specific topics, and efforts will be made to include these topics in future
+                    videos.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                Is there a way to get personalized help?
+                <img class="dropdown-icon" src="assets/drop.svg" alt="Dropdown icon">
+            </div>
+            <div class="accordion-content">
+                <p>Currently, the channel does not offer personalized help, but it aims to cover common questions and
+                    challenges students face.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                Are there any practice exams available?
+                <img class="dropdown-icon" src="assets/drop.svg" alt="Dropdown icon">
+            </div>
+            <div class="accordion-content">
+                <p>The channel provides practice questions and exams for classes 9 to 12, ECAT, and MDCAT to help
+                    students prepare effectively.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                How can I stay updated with new content?
+                <img class="dropdown-icon" src="assets/drop.svg" alt="Dropdown icon">
+            </div>
+            <div class="accordion-content bottom-rad">
+                <p>Subscribe to the channel and turn on notifications to stay updated with the latest content.</p>
             </div>
         </div>
     </div>
 
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section ">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Logo">
+                </div>
+                <p>
+                    Join Syed Ather Ali Official for an unparalleled educational experience. Our channel provides
+                    comprehensive content for classes 9 to 12, ECAT, and MDCAT, ensuring you grasp both classic and
+                    modern concepts. With dedicated tutorials and expert guidance, Syed Ather Ali Official has become
+                    the ultimate learning destination. From mastering exam techniques to deep dives into complex topics,
+                    this is where academic excellence is achieved.
+                </p>
+
+                <ul class="terms">
+                    <li><a href="#">Terms & conditions</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section links">
+                <h2>Site Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Publications</a></li>
+                    <li id="contact"><a href="#">Contact</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li>+92 42 358 509 31 (Head Office)</li>
+                    <li>+92 42 358 509 30 (Head Office)</li>
+                    <li>+92 42 111 100 678 (Delivery)</li>
+                    <li>+92 03 111 444 610 (Delivery)</li>
+                    <li><a href="mailto:snpfood@brain.net.pk">snpfood@brain.net.pk</a></li>
+                    <li>23-Usman Block, New Garden Town, Lahore, Pakistan</li>
+                </ul>
+            </div>
+            <div class="footer-section follow">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="#"><img src="assets/fb.svg" alt="Facebook"></a>
+                    <a href="#"><img src="assets/insta.svg" alt="Instagram"></a>
+                    <a href="#"><img src="assets/yt-footer.svg" alt="Youtube"></a>
+                </div>
+
+                <div class="app-links">
+                    <a href="#"><img src="https://static.tossdown.com/images/15a204d9-9623-4aea-8c7a-a4419417ee7e.webp"
+                            alt="App Store"></a>
+                    <a href="#"><img src="https://static.tossdown.com/images/c5c0daad-373c-4dd5-a8e8-6dcbbd142963.webp"
+                            alt="Google Play"></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="last-cont">
+            <h4>&copy; Syed Ather Ali Official </h4>
+            <h4>Making Education simply accessible!</h4>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script>
         function toggleMenu() {
             var navbarLinks = document.getElementById("navbar-links");
-            if (navbarLinks.classList.contains("open")) {
-                navbarLinks.classList.remove("open");
-            } else {
-                navbarLinks.classList.add("open");
-            }
+            navbarLinks.classList.toggle("open");
         }
+
+
+
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function () {
+                // Toggle the active class on the clicked accordion
+                this.parentElement.classList.toggle('active');
+
+                // Close other accordions
+                document.querySelectorAll('.accordion').forEach(accordion => {
+                    if (accordion !== this.parentElement) {
+                        accordion.classList.remove('active');
+                    }
+                });
+            });
+        });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
